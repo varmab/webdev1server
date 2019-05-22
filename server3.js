@@ -23,15 +23,14 @@ app.get("/api/books",(req,res)=>{
         res.status(200).send(books)
     })
 })
-
 app.post("/api/books",(req,res)=>{
     var newBook=new db.Book(req.body);
+    console.log(req.body)
     newBook.save((err,book)=>{
         if(err) res.status(500).send(err);
         res.status(200).send(book)
     })
 })
-
 app.put("/api/books/:id",(req,res)=>{
     var id=req.params.id;
     db.Book.findByIdAndUpdate(id,{title:req.body.title},{new:true},(err,book)=>{
