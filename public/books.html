@@ -93,6 +93,9 @@
 		$.ajax({
 			url:'/api/books/' + id,
 			method:'DELETE',
+			headers: {
+				"Authorization": "Basic " + btoa("internship" + ":" + "123456")
+			},
 			success:function(book){
 				alert('Book is deleted successfully')
 				window.location.href="/books"
@@ -110,6 +113,9 @@
 			url:'/api/books',
 			method:'POST',
 			data:formBody,
+			headers: {
+				"Authorization": "Basic " + btoa("internship" + ":" + "123456")
+			},
 			success:function(book){
 				console.log(book)
 			},
@@ -121,6 +127,9 @@
 
 	$.ajax({
 		url:'/api/books',
+		headers: {
+			"Authorization": "Basic " + btoa("internship" + ":" + "123456")
+		},
 		success:function(books){
 			console.log(books)
 			books.forEach(function(book){
