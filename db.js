@@ -10,3 +10,12 @@ var bookSchema=mongoose.Schema({
 
 //Create model
 exports.Book=mongoose.model("Book",bookSchema,'books');
+
+var studentSchema=mongoose.Schema({
+    name:String,
+    email:String,
+    phone:String,
+    rollNumber:String
+})
+
+exports.Student=mongoose.model("Student",studentSchema,'students');
